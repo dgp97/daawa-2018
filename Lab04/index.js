@@ -1,47 +1,27 @@
 var express = require('express')
 var app = express()
-app.use('/static', express.static('public'))
-
-app.get('/', function ( req, res){
-    res.send('Hola mundo! en Express :)')
+var path = require('path')
+app.use(express.static('public'))
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname + '/index.html'))
+// __dirname : It will resolve to your project folder.
 })
-
-
-app.post('/', function (req, res){
-    res.send('Llamada POST misma url')
+app.post('/', function (req, res) {
+  res.send('Llamada POST misma url')
 })
-
-app.put('/user', function (req, res){
-    res.send('Recibimos un PUT en /user')
+app.put('/user', function (req, res) {
+  res.send('Recibimos un PUT en /user')
 })
-
-app.delete('/user', function (req, res){
-    res.send('Recibimos un DELETE en /user')
+app.delete('/user', function (req, res) {
+  res.send('Recibimos un Delete en /user')
 })
-
-/*app.use(express.static('public'))
-app.use(express.static('files'))
-
-
-app.use('/static', express.static('public'))
-
-
-app.use(function (req, res, next){
-    res.status(404).send("Eso no existe")
+app.use(function (err, req, res, next) {
+  console.error(error.stack)
+  res.status(500).send('Algo salio mal Diana.')
 })
-
-app.use(function (err, req, res, next){
-    console.error(err.stack)
-    res.status(500).send('Algo salio mal')
+app.use(function (req, res, next) {
+  res.status(404).send('Eso no existe Diana.')
 })
-
-*/
-
-
-app.use(function (err, req, res, next){
-    console.error(err.stack)
-    res.status(500).send("Eso no existe!")
+app.listen(3000, function () {
+  console.log('Aplicacion de ejemplo escuchando en el puerto 3000!')
 })
-app.listen(3000, function() {
-    console.log('Aplicacion de ejemplo escuchando por el puerto 3000!')
-});
