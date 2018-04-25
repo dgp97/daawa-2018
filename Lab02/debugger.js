@@ -1,4 +1,4 @@
-var fs = require('fs');
+ar fs = require('fs');
 fs.readFile('lorem.txt','utf8',function (err, data){
     debugger;
     if(err)
