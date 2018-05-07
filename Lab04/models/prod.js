@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
 
-mongoose.connect('mongodb:/localhost/test');
+mongoose.connect('mongodb://localhost/test');
 
 var producto_schema = new Schema({
     nombre: String,
