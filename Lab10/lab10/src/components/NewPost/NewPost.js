@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 
 import classes from './NewPost.css';
 
-clas NewPost extends Component {
+class NewPost extends Component {
     state = {
         title:'',
         content:'',
@@ -48,10 +48,9 @@ clas NewPost extends Component {
             <label>Content</label>
             <textarea rows="4" value={this.state.content}
             onChange={( event ) =>this.setState( { title: event.target.value } )} />                
-            </textarea>
             <label>Autor</label>
             <select value={this.state.author}
-               onChange={( event ) =>this.setState( { title: event.target.value } )} />   
+               onChange={( event ) =>this.setState( { title: event.target.value } )} >  
             <option value="Dawa">Dawa</option>
             <option value="Tecsup">Tecsup</option>
             </select>

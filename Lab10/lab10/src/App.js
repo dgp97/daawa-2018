@@ -11,30 +11,26 @@ import NewPost from './components/NewPost/NewPost';
 class App extends Component {
   render() {
       
-    return (<BrowserRouter>)
-    (<div className={classes.App}>
+    return (<BrowserRouter>
+    <div className={classes.App}>
        <header>
            <nav>
                <ul>
-                   <li>
-                       <NavLink
+                   <li><NavLink
                        to="/"
                        exact
                        activeStyle={{
                                color: '#fa923f',
                                textDecoration: 'underline'
-                           }}>Inicio</NavLink>
-                   </li>
+                           }}>Inicio</NavLink></li>
                    
-                    <li>
-                       <NavLink
+                    <li><NavLink
                        to="/posts/"
                        exact
                        activeStyle={{
                                color: '#fa923f',
                                textDecoration: 'underline'
-                           }}>Posts</NavLink>
-                   </li>
+                           }}>Posts</NavLink></li>
                    
                    
                    <li><NavLink
