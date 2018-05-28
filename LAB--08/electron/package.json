@@ -4,7 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pack": "build --dir",
+    "dist": "build",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+    
+ "build": {
+    "appId": "enupal-electronv1",
+    "asar": true,
+    "win" : {
+      "target": "NSIS",
+      "icon": "dawa-win.ico"
+    }
   },
   "author": "diana",
   "license": "ISC",
